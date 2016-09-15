@@ -3645,7 +3645,7 @@ void Application::update(float deltaTime) {
 
     updateLOD();
 
-    if (!_physicsEnabled) {
+    if (!_physicsEnabled && !_physicsManuallyDisabled) {
         // we haven't yet enabled physics.  we wait until we think we have all the collision information
         // for nearby entities before starting bullet up.
         quint64 now = usecTimestampNow();
@@ -3986,6 +3986,18 @@ int Application::sendNackPackets() {
 
 
     return packetsSent;
+}
+
+void Application::togglePhysics() {
+	if(_physicsManuallyDisabled) {
+		_physicsManuallyDisabled = false;
+	}
+	else {
+		//set enable physics low if physics is disabled
+		_physicsEnabled = false;
+		_physicsManuallyDisabled = true;
+	}
+	return;
 }
 
 void Application::queryOctree(NodeType_t serverType, PacketType packetType, NodeToJurisdictionMap& jurisdictions, bool forceResend) {

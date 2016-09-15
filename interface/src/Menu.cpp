@@ -291,6 +291,10 @@ Menu::Menu() {
     // Settings > Developer Menus
     addCheckableActionToQMenuAndActionHash(settingsMenu, "Developer Menus", 0, false, this, SLOT(toggleDeveloperMenus()));
 
+	// Settings > Toggle Physics
+    addCheckableActionToQMenuAndActionHash(settingsMenu, MenuOption::TogglePhysics, 0, false, this, SLOT(togglePhysics()));
+
+
     // Settings > General...
     action = addActionToQMenuAndActionHash(settingsMenu, MenuOption::Preferences, Qt::CTRL | Qt::Key_Comma, nullptr, nullptr, QAction::PreferencesRole);
     connect(action, &QAction::triggered, [] {
