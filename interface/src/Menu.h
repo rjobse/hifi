@@ -184,6 +184,7 @@ namespace MenuOption {
     const QString ThreePointCalibration = "3 Point Calibration";
     const QString ThrottleFPSIfNotFocus = "Throttle FPS If Not Focus"; // FIXME - this value duplicated in Basic2DWindowOpenGLDisplayPlugin.cpp
     const QString ToolWindow = "Tool Window";
+	const QString TogglePhysics = "Toggle Physics";
     const QString TransmitterDrive = "Transmitter Drive";
     const QString TurnWithHead = "Turn using Head";
     const QString UseAudioForMouth = "Use Audio for Mouth";

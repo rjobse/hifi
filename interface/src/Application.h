@@ -335,6 +335,8 @@ public slots:
 
     void rotationModeChanged() const;
 
+	void togglePhysics();
+	
     static void runTests();
 
     QUuid getKeyboardFocusEntity() const;  // thread-safe
@@ -558,6 +560,8 @@ private:
     bool _isGLInitialized { false };
     bool _physicsEnabled { false };
 
+	bool _physicsManuallyDisabled = false;
+	
     bool _reticleClickPressed { false };
 
     int _avatarAttachmentRequest = 0;
